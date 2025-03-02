@@ -90,19 +90,55 @@ section {
                     font-weight:  bold;
                 }
 
-                & h2{
+                & h2 {
                     font-size: 5em;
                     line-height: 1em;
-                    font-family:  "League Gothic", sans-serif;
+                    font-family: "League Gothic", sans-serif;
                 }
+                
+                /* Tablets */
+                @media (max-width: 1024px) {
+                    & h2 {
+                        font-size: 4em;
+                    }
+                }
+                
+                /* Smartphones */
+                @media (max-width: 768px) {
+                    & h2 {
+                        font-size: 3em;
+                    }
+                }
+                
+                /* Telas menores que 480px */
+                @media (max-width: 480px) {
+                    & h2 {
+                        font-size: 2.5em;
+                    }
+                }
+                
 
-                & .description {
+                .description {
                     color: #d9d9d9;
                     font-size: 9px;
                     text-align: right;
                     max-width: 400px;
-                    
                 }
+                
+                @media (max-width: 600px) {
+                    .description {
+                        font-size: 8px;
+                        max-width: 100%; /* Para garantir que não ultrapasse a largura da tela */
+                        text-align: left; /* Ou center, se preferir */
+                    }
+                }
+                
+                @media (max-width: 400px) {
+                    .description {
+                        font-size: 7px;
+                    }
+                }
+                
 
                 & .information {
                     border-radius: 30px;
@@ -266,5 +302,115 @@ section {
                 }
             }
         }
+    }
+}
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    header {
+        width: 90vw;
+        grid-template-columns: 1fr 400px;
+        gap: 50px;
+    }
+
+    header img {
+        width: 200px;
+    }
+
+    header nav ul {
+        grid-template-columns: repeat(3, 150px);
+    }
+
+    .list {
+        width: 90vw;
+    }
+
+    .car-img {
+        width: 80%;
+    }
+
+    .content {
+        width: 80%;
+        right: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .content h2 {
+        font-size: 4em;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    .arrows {
+        width: 90vw;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+    header {
+        width: 100vw;
+        padding: 10px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    header img {
+        width: 150px;
+    }
+
+    header nav ul {
+        grid-template-columns: repeat(3, auto);
+        gap: 10px;
+    }
+
+    .car-img {
+        width: 90%;
+        top: 55%;
+    }
+
+    .content {
+        width: 90%;
+        right: 0;
+        text-align: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .content h2 {
+        font-size: 3em;
+    }
+
+    .description {
+        font-size: 0.7rem;
+    }
+
+    .information {
+        height: 30px;
+        width: 100px;
+    }
+
+    .arrows {
+        width: 95vw;
+    }
+
+    .indicators {
+        bottom: 10px;
+        height: 180px;
+    }
+
+    .number {
+        font-size: 3em;
+    }
+
+    .indicators ul li {
+        width: 30px;
+        height: 4px;
     }
 }
